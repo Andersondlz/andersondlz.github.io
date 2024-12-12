@@ -1,18 +1,37 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&display=swap');
 
-:root{
+:root, :root[data-theme="dark"]{
     --primary-color: #F0F0F0F0;
 
     --primary-bg-color: #111217;
     --secondary-bg-color: #28292E;
     --border-color: #28292e;
 
-    --title-color: #9a9a9c;
+    --title-color: #F0F0F0F0;
     --link-color: #9a9a9c;
     --icon-color: #c7c8c9;
     --text-color: #9a9a9c;
 }
 
+
+
+:root[data-theme="light"]{
+    --primary-color: #111217;
+
+    --primary-bg-color: #F0F0F0F0;
+    --secondary-bg-color: #e0e0e0;
+    --border-color: #e0e0e0;
+
+    --title-color: #111217;
+    --link-color: #111217;
+    --icon-color: #111217;
+    --text-color: #111217;
+}
+
+html[data-theme="light"] .brand__logo{
+    filter: invert(1);
+}
 
 *{
     margin: 0;
@@ -23,16 +42,40 @@
 }
 
 body{
-    background-color: var(--primary-bg-color);
+    background: var(--primary-bg-color);
     font-family: "Inter", sans-serif;
+    color: var(--text-color);
 }
 
 a{
     text-decoration: none   ;
+    color: var(--text-color);
+}
+
+a:hover{
+    color: var(--primary-color);
+    font-weight: 600;
 }
 
 i{
     color: var(--icon-color);
+}
+
+h1{
+    font-size: 2.5rem;
+    font-weight: 200;
+    
+}
+
+h1,h2,h3{
+    font-family: "League Spartan", sans-serif;
+    text-transform: uppercase;
+    color: var(--title-color)
+}
+
+p{
+    font-size: 1.25rem;
+    text-align: justify;
 }
 
 .header{
@@ -43,6 +86,12 @@ i{
     align-items: center;
     padding: 0.5rem 1rem;
 }   
+
+.header__toggle{
+    display: flex;
+    justify-content: flex-end;
+}
+
 .header__brand .brand__logo{
     width: 3.25rem;
     height: 3.25rem;
@@ -51,6 +100,8 @@ i{
 #toggle-theme{
     font-size: 1.5rem;
     color: var(--primary-color);
+    cursor: pointer;
+    transition: ease-in-out 0.5s;
 }
 
 .menu{
@@ -81,7 +132,9 @@ i{
 }
 
 .menu__link.active .menu__icon, 
-.menu__link.active .menu__text{
+.menu__link.active .menu__text,
+.menu__link:hover .menu__icon, 
+.menu__link:hover .menu__text{
     color: var(--primary-color);
     font-weight: 600;
 }
@@ -99,9 +152,84 @@ i{
     text-transform: uppercase;
 }
 
+.header__nav{
+    display: none;
+}
+
+.menu--principal{
+    gap: 1rem;
+}
+
+.menu--social{
+    gap: 1rem;
+}
+
+.btn{
+    display: flex;
+    gap: 0.65rem;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 0.875rem 1rem;
+    background: transparent;
+    border-radius: 3.125rem;
+}
+
+.btn span, .btn i{
+    font-size: 1.25rem;
+    text-transform: uppercase;
+}
+
+.btn--primary span{
+    color: var(--primary-color)
+}
+
+.btn--primary{
+    border: 1px solid var(--primary-color);
+}
+
+main{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 2.5rem 1rem
+}
+
+.main__content1{
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+
+footer p{
+    font-size: .875rem;
+    text-align: center;
+}
+
 @media (min-width: 768px) {
-    .menu--mobile{
+    .header{
+        position: fixed;
+        border-bottom: 1px solid var(--border-color);
+        padding: 1rem 6rem;
+        background: var(--primary-bg-color);
+    }
+    .nav--mobile{
         display: none;
+    }
+    .header__nav{
+        display: flex;
+    }
+
+    .header_nav,
+    .header__toggle{
+        min-width: 30%;
+    }
+}
+
+@media (min-width: 1024px) {
+    .header{
+        padding: 1rem 20rem;
     }
     
 }

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-br" data-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,12 +11,39 @@
 </head>
 <body>
     <header class="header">
+        <nav class="header__nav">
+            <ul class="menu menu--principal">
+                <li class="menu__item">
+                    <a class="menu__link active" href="#home"></a>
+                        <span class="menu__text">Home</span>
+                    </a>
+                </li>
+                <li class="menu__item">
+                    <a class="menu__link" href="#projetos">
+                        <span class="menu__text">Projetos</span>
+                    </a>
+                </li>
+                <li class="menu__item">
+                    <a class="menu__link" href="#sobre">
+                        <span class="menu__text">Sobre</span>
+                    </a>
+                </li>
+                <li class="menu__item">
+                    <a class="menu__link" href="#contato">
+                        <span class="menu__text">Contato</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
         <div class="header__brand">
             <img class="brand__logo" src="./assets/images/logoAnderBlack.png" alt="Logo do Anderson">
         </div>
-        <i id="toggle-theme" class="bi bi-brightness-high"></i>
+        <div class="header__toggle">
+            <i id="toggle-theme" class="bi bi-brightness-high"></i>
+        </div>
+        
     </header>
-    <nav>
+    <nav class="nav--mobile">
         <ul class="menu menu--mobile">
             <li class="menu__item">
                 <a class="menu__link active" href="#home">
@@ -44,5 +71,38 @@
             </li>
         </ul>
     </nav>
+    <main>
+        <div class="main__content1">
+            <h1> <b>"Entregamos soluções de código com foco em inovação</b>, eficiência e qualidade, garantindo resultados.</h1>
+            <p>Olá, me chamo Anderson da Luz, e estou iniciando na area da programação. Aprendendo novas tecnicas com os melhores profissionais do Brasil. </p>
+            <ul class="menu menu--social">
+                <li>
+                    <a class="menu__link" href="https://github.com/Andersondlz">
+                        <i class="menu__icon bi bi-github"></i>
+                    </a>
+                </li>
+                <li>
+                    <a class="menu__link" href="https://www.linkedin.com/in/anderson-da-luz//">
+                        <i class="menu__icon  bi bi-linkedin"></i>
+                    </a>
+                </li>
+                <li>
+                    <a class="menu__link" href="https://www.instagram.com/andersondlz/">
+                        <i class="menu__icon bi bi-instagram"></i>
+                    </a>
+                </li>
+            </ul>
+            <button class="btn btn--primary">
+                <span>Ver Projetos</span>
+                <i class="bi bi-arrow-right-short"></i>
+            </button>
+        </div> 
+    </main>
+    <footer>
+        <p>
+            2025. Todos os Direitos Reservados. Anderson da Luz. Desenvolvido por <a href="https://github.com/Andersondlz">GitHub</a>
+        </p>
+    </footer>
+    <script src="./assets/js/scripts.js"></script>
 </body>
 </html>
