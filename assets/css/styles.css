@@ -70,8 +70,13 @@ i{
 h1{
     font-size: 2.5rem;
     font-weight: 200;
-    
+    margin-bottom: 1rem;
 }
+
+h2{
+    font-size: 2rem;
+    text-align: center;
+}   
 
 h1,h2,h3{
     font-family: "League Spartan", sans-serif;
@@ -180,8 +185,10 @@ p{
     padding: 0.875rem 1.5rem;
     background: transparent;
     border-radius: 3.125rem;
+    border:none;
     transition: ease-out 0.5s;
     cursor: pointer;
+    color: var(--primary-color);
 }
 
 .btn:hover{
@@ -203,6 +210,9 @@ p{
     border: 1px solid var(--primary-color);
 }
 
+main, .projects{
+    padding: 2.5rem 1rem;
+}
 
 
 main{
@@ -229,7 +239,7 @@ main{
     align-items: center;
     gap: 1.25rem;
     justify-content: flex-start;
-    padding: 6.25rem 1rem 2rem 1rem;
+    padding: 6.25rem 1rem 2rem;
     background: var(--secondary-bg-color);
     margin-top: -5.5rem;
 }
@@ -262,6 +272,53 @@ main{
     height: 2.4rem;
 }
 
+.projects{
+    display: flex;
+    flex-direction: column;
+}
+
+.projects__card{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.card__cover{
+    width: 100%;
+    border-radius: 0.5rem;
+    object-fit: cover;
+    object-position: center;
+}
+
+.card__body{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+    gap: 1rem;
+}
+
+.card__title{
+    font-size: 1.5rem;
+}
+
+.card__description{
+    font-size: 1rem;
+    color: var(--title-color)
+}
+
+.card__list{
+    margin-left:1rem;
+}
+
+.card__item{
+    list-style: disc;
+}
+
+.card__buttons{
+    display: flex;
+}
+
 footer{
     margin-bottom: 5rem;
 }
@@ -279,6 +336,8 @@ footer p{
         padding: 1rem 6rem;
         background: var(--primary-bg-color);
     }
+
+
     .nav--mobile{
         display: none;
     }
@@ -295,7 +354,11 @@ footer p{
         font-size: 4rem;
     }
 
-    main{
+    h2{
+        font-size: 3rem;  
+        letter-spacing: 0.4rem;
+    }
+    main, .projects{
         padding: 8rem 6rem 4rem 6rem;
     }
 
@@ -321,6 +384,14 @@ footer p{
         padding: 12rem 6rem 2rem;
     }
 
+    h1{
+        font-size: 6.5rem;
+    }
+
+    h2{
+        font-size: 4rem;
+    }
+
     p{
         font-size: 1.5rem;
     }
@@ -341,11 +412,42 @@ footer p{
     .skills__list{
         gap: 1rem;
     }
+
+    .skills__logo{
+        height: 3rem;
+    }
+
+    .projects__card{
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    }
+
+    .card__cover{
+    width: 50%;
+    }
+
+    .card__title{
+        font-size: 3.25rem;
+    }
+
+    .card__description, .card__item{
+        font-size: 1.5rem;
+    }
+
+    .card__buttons .btn{
+        width: auto;
+    }
 }
+
 
 @media (min-width: 1400px){
     h1{
-        font-size: 5rem;
+        font-size: 7rem;
+    }
+
+    h2{
+        font-size: 4.5rem;
     }
 
     .header{
@@ -358,4 +460,5 @@ footer p{
 
     .skills{
         padding: 10rem 15rem 4rem;
+    }
 }
